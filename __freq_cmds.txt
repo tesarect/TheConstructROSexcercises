@@ -1,0 +1,27 @@
+rviz:
+roslaunch robot_description rviz.launch
+
+rm both devel and build each eachtime
+
+gazibo:
+roslaunch robot_description empty_world.launch
+rosservice call /gazibo/reset_simulation
+gazebo ~/catkin_ws/src/studying_gazebo/worlds/example2.world
+
+
+launch robot models:
+roslaunch robot_description spawn.launch x:=6 model_name:=second_mode
+roslaunch robot_description spawn.launch model_name:=first_model
+roslaunch robot_description robot_control.launch
+
+run robot:
+rosrun robot_description move-display-odom.py
+
+rqt:
+rosrun rqt_publisher rqt_publisher &
+rosrun rqt_reconfigure rqt_reconfigure &
+
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/catkin_ws/devel/lib
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/catkin_ws/devel/lib
+
+catkin_make && source devel/setup.bash

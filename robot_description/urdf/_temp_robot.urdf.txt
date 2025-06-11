@@ -1,0 +1,25 @@
+        <collision>
+            <origin rpy="0 0 1.5707" xyz="0 0.18 0" />
+            <geometry>
+                <cylinder length="0.12" radius="0.4"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0 0 1.5707" xyz="0 0.18 0" />
+            <geometry>
+                <cylinder length="0.12" radius="0.4"/>
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin rpy="0 0 1.5707" xyz="0 0.06 0" />
+            <geometry>
+                <cylinder length="0.12" radius="0.08"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0 0 1.5707" xyz="0 0.06 0" />
+            <geometry>
+                <cylinder length="0.12" radius="0.08"/>
+            </geometry>
+        </visual>
