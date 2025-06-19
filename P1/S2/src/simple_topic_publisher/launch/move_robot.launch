@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="simple_topic_publisher" type="move_robot.py" output="screen">
+    </node>
+</launch>
