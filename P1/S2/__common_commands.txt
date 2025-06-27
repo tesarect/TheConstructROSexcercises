@@ -23,6 +23,9 @@ rosparam set <parameter_name> <value>
 rostopic pub <topic_name> <message_type> <value>
 # to read all of the logs issued by all of the ROS Systems
 rostopic echo /rosout
+# to see the positions and the effort made by each joint of the robot arm - Debugging chapter
+rostopic echo /joint_states -n1
+
 
 rosservice list
 # To know the type of service message is used by <name_of_your_service>
@@ -61,3 +64,15 @@ user:~/catkin_ws$ rossrv show my_custom_srv_msg_pkg_648/MyCustomServiceMessage
 int32 duration
 ---
 bool success
+
+To Record data from the topics you want:
+rosbag record -O name_bag_file.bag name_topic_to_record1 name_topic_to_record2 ... name_topic_to_recordN
+
+To Extract general information about the recorded data:
+rosbag info name_bag_file.bag
+
+To Replay the recorded data:
+rosbag play name_bag_file.bag
+
+RVIZ is a representation of what is being published in the topics,
+by the simulation or the real robot.

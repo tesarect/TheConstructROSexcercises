@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch the topic publisher node -->
+    <node name="topic_publisher" 
+          pkg="rqt_graph_105_103" 
+          type="topic_publisher.py" 
+          output="screen"/>
+    
+    <!-- Launch the topic subscriber node -->
+    <node name="topic_subscriber" 
+          pkg="rqt_graph_105_103" 
+          type="topic_subscriber.py" 
+          output="screen"/>
+    
+    <!-- Launch rqt_graph directly for visualization -->
+    <node name="rqt_graph" pkg="rqt_graph" type="rqt_graph"/>
+</launch>
